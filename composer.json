@@ -11,7 +11,7 @@
     }
   ],
   "autoload": {
-    "psr-4": {"Fullworks_WP_Autoloader\\": "./"}
+    "psr-4": {"Fullworks_WP_Autoloader\\": "/"}
   },
   "extra": {
     "class": "Fullworks_WP_Autoloader\\AutoloaderPlugin"
