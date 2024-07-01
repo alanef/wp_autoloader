@@ -1,0 +1,15 @@
+{
+  "name": "alanef/wp_autoloader",
+  "description": "A custom autoloader to comply with WP class file names",
+  "type": "composer-plugin",
+  "license": "GPL",
+  "autoload": {
+    "psr-4": {"Fullworks_WP_Autoloader\\": "./"}
+  },
+  "extra": {
+    "class": "Fullworks_WP_Autoloader\\AutoloaderPlugin"
+  },
+  "require": {
+    "composer-plugin-api": "^2.0"
+  }
+}
