@@ -3,11 +3,11 @@ namespace Fullworks_WP_Autoloader;
 
 class AutoloaderPlugin
 {
-	public function __construct() {
+	public function __construct($namespace) {
 		spl_autoload_register(
-			function ($class_name) {
+			function ($class_name) use ($namespace) {
 
-				if (false === strpos($class_name, 'Quick_Event_Manager\Plugin')) {
+				if (false === strpos($class_name, $namespace)) {
 					return;
 				}
 				$file_name_no_suffix = '';
