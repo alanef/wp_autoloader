@@ -40,7 +40,7 @@ class AutoloaderPlugin implements PluginInterface
 					}
 				}
 
-				$filepath = rtrim(dirname(dirname(__FILE__)) . $namespace, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+				$filepath = rtrim( dirname( dirname( __FILE__ ) ) . $namespace, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
 				$filepath .= $file_name_no_suffix;
 
 				if (is_readable($filepath . '.php')) {
