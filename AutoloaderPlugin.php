@@ -58,4 +58,12 @@ class AutoloaderPlugin implements PluginInterface
 			}
 		);
 	}
+
+	public function deactivate(Composer $composer, IOInterface $io) {
+		// Add your deactivation code here or leave it empty if not needed
+	}
+
+	public function uninstall(Composer $composer, IOInterface $io) {
+		// Add your uninstallation code here or leave it empty if not needed
+	}
 }
