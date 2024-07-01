@@ -1,14 +1,9 @@
 <?php
 namespace Fullworks_WP_Autoloader;
 
-use Composer\Plugin\PluginInterface;
-use Composer\Composer;
-use Composer\IO\IOInterface;
-
-class AutoloaderPlugin implements PluginInterface
+class AutoloaderPlugin
 {
-	public function activate(Composer $composer, IOInterface $io)
-	{
+	public function __construct() {
 		spl_autoload_register(
 			function ($class_name) {
 
@@ -57,13 +52,5 @@ class AutoloaderPlugin implements PluginInterface
 				return;
 			}
 		);
-	}
-
-	public function deactivate(Composer $composer, IOInterface $io) {
-		// Add your deactivation code here or leave it empty if not needed
-	}
-
-	public function uninstall(Composer $composer, IOInterface $io) {
-		// Add your uninstallation code here or leave it empty if not needed
 	}
 }

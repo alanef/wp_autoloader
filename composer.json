@@ -12,11 +12,5 @@
   ],
   "autoload": {
     "psr-4": {"Fullworks_WP_Autoloader\\": "src/"}
-  },
-  "extra": {
-    "class": "Fullworks_WP_Autoloader\\AutoloaderPlugin"
-  },
-  "require": {
-    "composer-plugin-api": "^2.0"
   }
 }

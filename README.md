@@ -2,17 +2,15 @@
 Composer plugin to use as autoloader complying with  WP class names structures
 
 
-include in your projects
+include in your projects something like
 
-`{
-"require": {
-"vendor/wp_atoloaderr": "dev-master"
-},
-"repositories": [
-{
-"type": "vcs",
-"url": "https://github.com/alanef/wp_autoloader"
-}
-]
-}`
+    "repositories": {
+       "alanef/wp_autoloader": {
+       "type": "vcs",
+       "url": "https://github.com/alanef/wp_autoloader"
+       }
+     },
+     "require": {
+       "alanef/wp_autoloader": "dev-main"
+      }
 
