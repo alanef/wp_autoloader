@@ -3,9 +3,9 @@ namespace Fullworks_WP_Autoloader;
 
 class AutoloaderPlugin
 {
-	public function __construct($namespace) {
+	public function __construct($namespace, $base) {
 		spl_autoload_register(
-			function ($class_name) use ($namespace) {
+			function ($class_name) use ($namespace, $base) {
 
 				if (false === strpos($class_name, $namespace)) {
 					return;
@@ -13,7 +13,7 @@ class AutoloaderPlugin
 				$file_name_no_suffix = '';
 				$file_parts = explode('\\', $class_name);
 				$namespace  = '';
-				for ($i = count($file_parts) - 1; $i > 1; $i -- ) {
+				for ($i = count($file_parts) - 1; $i > 0; $i -- ) {
 
 					$current = strtolower($file_parts[$i]);
 					$current = str_ireplace('_', '-', $current);
@@ -35,7 +35,7 @@ class AutoloaderPlugin
 					}
 				}
 
-				$filepath = rtrim( dirname( dirname( __FILE__ ) ) . $namespace, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
+				$filepath = rtrim( $base . $namespace, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
 				$filepath .= $file_name_no_suffix;
 
 				if (is_readable($filepath . '.php')) {
